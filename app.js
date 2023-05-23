@@ -1,6 +1,11 @@
-function showRating(rating) {
-// try this one again start video @ 11:35
-// use google to help and notes if needed
+async function firstSixIncomplete(numberIncomplete) {
+  const promise = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+  const result = await promise.json();
+
+  const incompleteTasks = result.filter((elem) => !elem.completed).slice(0, 6);
+
+  console.log(incompleteTasks);
 }
 
-console.log(showRating(3.5));
+firstSixIncomplete(6);
